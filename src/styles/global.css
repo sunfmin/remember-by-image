@@ -347,22 +347,22 @@ a.cite { color: var(--ink-soft); }
 
 .storyboard ol li {
   counter-increment: frame;
-  display: flex;
-  gap: 0.9rem;
-  align-items: baseline;
   margin: 0;
-  padding: 0.55rem 1.2rem;
+  /* 悬挂缩进：编号占 2.5rem 的左侧沟槽，换行后正文对齐 */
+  padding: 0.55rem 1.2rem 0.55rem 3.7rem;
 }
 
 .storyboard ol li + li { border-top: 1px dashed var(--rule); }
 
 .storyboard ol li::before {
   content: counter(frame, decimal-leading-zero);
+  display: inline-block;
+  width: 2.5rem;
+  margin-left: -2.5rem;
   font-family: var(--num);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--amber);
-  flex: 0 0 1.6rem;
 }
 
 .storyboard strong { color: var(--dusk-strong); }
