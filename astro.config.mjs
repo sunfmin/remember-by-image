@@ -7,7 +7,7 @@ const base = '/remember-by-image';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sunfmin.github.io',
+  site: 'https://sunfmin.com',
   base,
   integrations: [mdx()],
   markdown: {
