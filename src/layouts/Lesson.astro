@@ -1,0 +1,62 @@
+---
+import Base from './Base.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  lesson: CollectionEntry<'lessons'>;
+  prev?: CollectionEntry<'lessons'>;
+  next?: CollectionEntry<'lessons'>;
+}
+
+const { lesson, prev, next } = Astro.props;
+const { order, title, minutes, skill, skillId } = lesson.data;
+const no = String(order).padStart(2, '0');
+---
+
+<Base title={`第 ${order} 课：${title} · 图像记忆`}>
+  <article data-lesson={lesson.id}>
+    <div class="kicker"><span class="no">{no}</span> ／ 第 {order} 课</div>
+    <h1>{title}</h1>
+    <div class="lesson-meta">
+      约 {minutes} 分钟 · 技能：{skillId ? <a href={`/glossary#${skillId}`}>{skill}</a> : skill}
+      &nbsp;|&nbsp; <a href="/glossary">术语表</a>
+    </div>
+
+    <slot />
+
+    <div class="complete-block" data-slug={lesson.id}>
+      <span class="seal" aria-hidden="true">记</span>
+      <button class="stamp-btn" type="button">盖章 · 完成本课</button>
+      <p class="hint">做完默写再盖。印一落，这课就记入你的路线。</p>
+    </div>
+
+    <nav class="lesson-nav">
+      <div class="row">
+        <span>{prev ? <a href={`/lessons/${prev.id}`}>← 第 {prev.data.order} 课 · {prev.data.title}</a> : <a href="/">← 返回路线</a>}</span>
+        <span>{next && <a href={`/lessons/${next.id}`}>第 {next.data.order} 课 · {next.data.title} →</a>}</span>
+      </div>
+    </nav>
+  </article>
+</Base>
+
+<script>
+  import { getLesson, markDone } from '../scripts/progress';
+
+  const block = document.querySelector<HTMLElement>('.complete-block');
+  if (block) {
+    const slug = block.dataset.slug!;
+    const hint = block.querySelector<HTMLElement>('.hint')!;
+
+    const p = getLesson(slug);
+    if (p.done) {
+      block.classList.add('done');
+      hint.textContent = `已于 ${new Date(p.doneAt!).toLocaleDateString('zh-CN')} 盖章完成。想复习随时重做默写。`;
+    }
+
+    block.querySelector('.stamp-btn')?.addEventListener('click', () => {
+      markDone(slug);
+      block.classList.add('done', 'just-stamped');
+      hint.textContent = '已盖章。这课记入你的路线了。';
+    });
+  }
+</script>

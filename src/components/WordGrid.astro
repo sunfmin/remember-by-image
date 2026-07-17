@@ -1,0 +1,25 @@
+---
+/* 词卡网格：字 + 角落小画，站点自身的双编码示范。
+   items 传字符串数组，或 { word, pic } 对象数组（pic 为可选 emoji）。 */
+interface Card {
+  word: string;
+  pic?: string;
+}
+
+interface Props {
+  items: (string | Card)[];
+}
+
+const { items } = Astro.props;
+const cards: Card[] = items.map((it) => (typeof it === 'string' ? { word: it } : it));
+---
+
+<div class="word-grid">
+  {cards.map((c, i) => (
+    <div class="word-card">
+      <span class="num">{String(i + 1).padStart(2, '0')}</span>
+      {c.word}
+      {c.pic && <span class="pic" aria-hidden="true">{c.pic}</span>}
+    </div>
+  ))}
+</div>

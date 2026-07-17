@@ -1,0 +1,22 @@
+---
+/* 资源库页面直接渲染仓库根的 RESOURCES.md（家教的工作文件是唯一事实来源，
+   避免两处维护同一份链接清单）。md 里的 h1 由页面自己的标题替代，用 CSS 隐藏。 */
+import Base from '../layouts/Base.astro';
+import { Content as Resources } from '../../RESOURCES.md';
+---
+
+<Base title="资源库 · 图像记忆" active="resources">
+  <article class="entry-list md-doc">
+    <h1>资源库</h1>
+    <div class="lesson-meta">查证过的论文、书、工具与社区 · 与仓库根 RESOURCES.md 同源</div>
+    <Resources />
+    <nav class="lesson-nav">
+      <a href="/">← 返回路线</a>
+    </nav>
+  </article>
+</Base>
+
+<style>
+  /* md 文件自带的 h1 与页面标题重复，隐藏 */
+  .md-doc :global(h1:not(:first-child)) { display: none; }
+</style>

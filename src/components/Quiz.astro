@@ -1,0 +1,80 @@
+---
+/* 选择题测验：选中即判，给解释，答完全部题目后把成绩记入本课进度。
+   注意：同一题的所有选项字数应相同，避免格式泄露答案。 */
+interface Question {
+  q: string;
+  options: string[];
+  answer: number; // 正确选项下标
+  explain?: string;
+}
+
+interface Props {
+  questions: Question[];
+}
+
+const { questions } = Astro.props;
+const uid = Math.random().toString(36).slice(2, 8); // 同页多个测验时隔离 radio name
+---
+
+<quiz-block class="quiz" data-total={questions.length}>
+  {questions.map((q, qi) => (
+    <div class="quiz-q" data-answer={q.answer} data-explain={q.explain || ''}>
+      <div class="q-text">{qi + 1}. {q.q}</div>
+      {q.options.map((opt) => (
+        <label>
+          <input type="radio" name={`q-${uid}-${qi}`} />
+          {opt}
+        </label>
+      ))}
+    </div>
+  ))}
+</quiz-block>
+
+<script>
+  import { recordQuiz } from '../scripts/progress';
+
+  class QuizBlock extends HTMLElement {
+    connectedCallback() {
+      const total = Number(this.dataset.total || '0');
+      let answered = 0;
+      let correctCount = 0;
+
+      this.querySelectorAll<HTMLElement>('.quiz-q').forEach((qDiv) => {
+        const answer = Number(qDiv.dataset.answer);
+        const explain = qDiv.dataset.explain || '';
+        const labels = [...qDiv.querySelectorAll('label')];
+        let done = false;
+
+        labels.forEach((label, oi) => {
+          label.querySelector('input')?.addEventListener('change', () => {
+            if (done) return;
+            done = true;
+            answered++;
+            const hit = oi === answer;
+            if (hit) correctCount++;
+
+            labels.forEach((l, li) => {
+              l.classList.toggle('ok', li === answer);
+              if (li === oi && !hit) l.classList.add('err');
+              l.querySelector('input')!.disabled = true;
+            });
+
+            if (explain) {
+              const ex = document.createElement('div');
+              ex.className = 'result show ' + (hit ? 'good' : 'bad');
+              ex.textContent = (hit ? '正确。' : '不对。') + explain;
+              qDiv.appendChild(ex);
+            }
+
+            if (answered === total) {
+              const slug = this.closest<HTMLElement>('[data-lesson]')?.dataset.lesson;
+              if (slug) recordQuiz(slug, correctCount, total);
+            }
+          });
+        });
+      });
+    }
+  }
+
+  customElements.define('quiz-block', QuizBlock);
+</script>

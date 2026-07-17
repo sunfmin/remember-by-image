@@ -1,0 +1,18 @@
+---
+/* 分镜：故事联想的引用块。子内容写一个 Markdown 有序列表，
+   每一项渲染成一格带编号的「电影分镜」。 */
+interface Props {
+  title?: string;
+}
+
+const { title = '放一部小电影' } = Astro.props;
+---
+
+<figure class="storyboard">
+  <figcaption class="storyboard-title">▸ {title}</figcaption>
+  <slot />
+</figure>
+
+<style>
+  .storyboard { margin-left: 0; margin-right: 0; }
+</style>

@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const lessons = (await getCollection('lessons')).sort((a, b) => a.data.order - b.data.order);
+const teaser = lessons.at(-1)?.data.teaser;
+const slugs = lessons.map((l) => l.id);
+---
+
+<Base title="图像记忆 · 多存一份画面" active="home">
+  <section class="hero">
+    <h1>把要记的东西，<br />多存一份画面</h1>
+    <p class="sub">
+      大脑有两条记忆通道：一条存文字，一条存画面。这门课把你天生最强的那条通道，
+      变成随手可用的本能——单词、书、名字，看几遍就记住。
+    </p>
+    <div class="stats-strip" data-slugs={JSON.stringify(slugs)}>
+      <span class="stat"><b data-stat="done">0</b>课已盖章</span>
+      <span class="stat"><b data-stat="total">{lessons.length}</b>课已开</span>
+      <span class="stat"><b data-stat="streak">0</b>天连续练习</span>
+    </div>
+  </section>
+
+  <section class="route">
+    <div class="route-title">巡 宫 路 线 —— 每一课是一个地点，走过就盖章</div>
+    <ol class="route-list">
+      {lessons.map((l) => (
+        <li class="route-stop" data-slug={l.id}>
+          <span class="locus" aria-hidden="true">{l.data.emblem}</span>
+          <div class="route-card">
+            <span class="seal card-seal" aria-hidden="true">记</span>
+            <span class="no">{String(l.data.order).padStart(2, '0')}</span>
+            <h2><a class="stretch" href={`/lessons/${l.id}`}>{l.data.title}</a></h2>
+            <p class="desc">{l.data.summary}</p>
+            <div class="meta">
+              <span>约 {l.data.minutes} 分钟</span>
+              <span>技能：{l.data.skill}</span>
+              <span class="score" data-score></span>
+            </div>
+          </div>
+        </li>
+      ))}
+      {teaser && (
+        <li class="route-stop teaser">
+          <span class="locus" aria-hidden="true">{teaser.emblem}</span>
+          <div class="route-card">
+            <span class="no">下一站 · 待开课</span>
+            <h2>{teaser.title}</h2>
+            <p class="desc">{teaser.note}</p>
+          </div>
+        </li>
+      )}
+    </ol>
+  </section>
+
+  <section class="ref-links">
+    <a href="/glossary">
+      <span class="t">术语表</span>
+      <span class="d">全课程的共同语言，一个概念一个名字</span>
+    </a>
+    <a href="/resources">
+      <span class="t">资源库</span>
+      <span class="d">查证过的论文、书与社区，全部可点</span>
+    </a>
+  </section>
+</Base>
+
+<script>
+  import { getLesson, doneCount, streak } from '../scripts/progress';
+
+  // 路线图上标记已完成的课、填默写成绩
+  document.querySelectorAll<HTMLElement>('.route-stop[data-slug]').forEach((stop) => {
+    const p = getLesson(stop.dataset.slug!);
+    if (p.done) stop.classList.add('done');
+    const scoreEl = stop.querySelector<HTMLElement>('[data-score]');
+    if (scoreEl && p.recall) scoreEl.textContent = `默写 ${p.recall.correct}/${p.recall.total}`;
+  });
+
+  // 顶部统计
+  const strip = document.querySelector<HTMLElement>('.stats-strip');
+  if (strip) {
+    const slugs: string[] = JSON.parse(strip.dataset.slugs || '[]');
+    strip.querySelector('[data-stat="done"]')!.textContent = String(doneCount(slugs));
+    strip.querySelector('[data-stat="streak"]')!.textContent = String(streak());
+  }
+</script>

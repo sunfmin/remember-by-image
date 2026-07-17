@@ -1,0 +1,67 @@
+---
+import '@fontsource-variable/fraunces';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  active?: 'home' | 'glossary' | 'resources';
+}
+
+const { title, active } = Astro.props;
+---
+
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <script is:inline>
+      // 防闪烁：进页面立刻应用已保存的主题
+      const saved = localStorage.getItem('rbi:theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.dataset.theme = saved;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="site-header">
+        <a class="wordmark" href="/">
+          <span class="seal-mark">记</span>
+          <span>
+            <span class="name">图像记忆</span><br />
+            <span class="tagline">多存一份画面</span>
+          </span>
+        </a>
+        <nav class="header-nav">
+          <a href="/" aria-current={active === 'home' ? 'page' : undefined}>路线</a>
+          <a href="/glossary" aria-current={active === 'glossary' ? 'page' : undefined}>术语表</a>
+          <a href="/resources" aria-current={active === 'resources' ? 'page' : undefined}>资源库</a>
+          <button class="theme-toggle" type="button" aria-label="切换深浅色">◐</button>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        图像记忆 · 私人课程 · 方法基于双编码与提取练习的循证研究
+      </footer>
+    </div>
+
+    <script>
+      const btn = document.querySelector<HTMLButtonElement>('.theme-toggle');
+      btn?.addEventListener('click', () => {
+        const root = document.documentElement;
+        const systemDark = matchMedia('(prefers-color-scheme: dark)').matches;
+        const current = root.dataset.theme || (systemDark ? 'dark' : 'light');
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('rbi:theme', next);
+      });
+    </script>
+  </body>
+</html>

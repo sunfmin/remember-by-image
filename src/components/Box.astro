@@ -1,0 +1,13 @@
+---
+interface Props {
+  title: string;
+  variant?: 'default' | 'win';
+}
+
+const { title, variant = 'default' } = Astro.props;
+---
+
+<aside class:list={['box', { win: variant === 'win' }]}>
+  <div class="box-title">{title}</div>
+  <slot />
+</aside>
