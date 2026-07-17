@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import { withBase } from '../scripts/url';
 
 const lessons = (await getCollection('lessons')).sort((a, b) => a.data.order - b.data.order);
 const teaser = lessons.at(-1)?.data.teaser;
@@ -30,7 +31,7 @@ const slugs = lessons.map((l) => l.id);
           <div class="route-card">
             <span class="seal card-seal" aria-hidden="true">记</span>
             <span class="no">{String(l.data.order).padStart(2, '0')}</span>
-            <h2><a class="stretch" href={`/lessons/${l.id}`}>{l.data.title}</a></h2>
+            <h2><a class="stretch" href={withBase(`/lessons/${l.id}`)}>{l.data.title}</a></h2>
             <p class="desc">{l.data.summary}</p>
             <div class="meta">
               <span>约 {l.data.minutes} 分钟</span>
@@ -54,11 +55,11 @@ const slugs = lessons.map((l) => l.id);
   </section>
 
   <section class="ref-links">
-    <a href="/glossary">
+    <a href={withBase('/glossary')}>
       <span class="t">术语表</span>
       <span class="d">全课程的共同语言，一个概念一个名字</span>
     </a>
-    <a href="/resources">
+    <a href={withBase('/resources')}>
       <span class="t">资源库</span>
       <span class="d">查证过的论文、书与社区，全部可点</span>
     </a>

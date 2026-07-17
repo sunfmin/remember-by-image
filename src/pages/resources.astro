@@ -3,6 +3,7 @@
    避免两处维护同一份链接清单）。md 里的 h1 由页面自己的标题替代，用 CSS 隐藏。 */
 import Base from '../layouts/Base.astro';
 import { Content as Resources } from '../../RESOURCES.md';
+import { withBase } from '../scripts/url';
 ---
 
 <Base title="资源库 · 图像记忆" active="resources">
@@ -11,7 +12,7 @@ import { Content as Resources } from '../../RESOURCES.md';
     <div class="lesson-meta">查证过的论文、书、工具与社区 · 与仓库根 RESOURCES.md 同源</div>
     <Resources />
     <nav class="lesson-nav">
-      <a href="/">← 返回路线</a>
+      <a href={withBase('/')}>← 返回路线</a>
     </nav>
   </article>
 </Base>

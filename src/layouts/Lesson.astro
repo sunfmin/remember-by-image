@@ -1,6 +1,7 @@
 ---
 import Base from './Base.astro';
 import type { CollectionEntry } from 'astro:content';
+import { withBase } from '../scripts/url';
 
 interface Props {
   lesson: CollectionEntry<'lessons'>;
@@ -18,8 +19,8 @@ const no = String(order).padStart(2, '0');
     <div class="kicker"><span class="no">{no}</span> ／ 第 {order} 课</div>
     <h1>{title}</h1>
     <div class="lesson-meta">
-      约 {minutes} 分钟 · 技能：{skillId ? <a href={`/glossary#${skillId}`}>{skill}</a> : skill}
-      &nbsp;|&nbsp; <a href="/glossary">术语表</a>
+      约 {minutes} 分钟 · 技能：{skillId ? <a href={withBase(`/glossary#${skillId}`)}>{skill}</a> : skill}
+      &nbsp;|&nbsp; <a href={withBase('/glossary')}>术语表</a>
     </div>
 
     <slot />
@@ -32,8 +33,8 @@ const no = String(order).padStart(2, '0');
 
     <nav class="lesson-nav">
       <div class="row">
-        <span>{prev ? <a href={`/lessons/${prev.id}`}>← 第 {prev.data.order} 课 · {prev.data.title}</a> : <a href="/">← 返回路线</a>}</span>
-        <span>{next && <a href={`/lessons/${next.id}`}>第 {next.data.order} 课 · {next.data.title} →</a>}</span>
+        <span>{prev ? <a href={withBase(`/lessons/${prev.id}`)}>← 第 {prev.data.order} 课 · {prev.data.title}</a> : <a href={withBase('/')}>← 返回路线</a>}</span>
+        <span>{next && <a href={withBase(`/lessons/${next.id}`)}>第 {next.data.order} 课 · {next.data.title} →</a>}</span>
       </div>
     </nav>
   </article>

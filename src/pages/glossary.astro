@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { withBase } from '../scripts/url';
 ---
 
 <Base title="术语表 · 图像记忆" active="glossary">
@@ -34,7 +35,7 @@ import Base from '../layouts/Base.astro';
     <h2>图像记忆技术</h2>
 
     <h3 id="story-method">故事联结法 <span class="cite">story / link method</span></h3>
-    <p>把要记的一串东西，编成一个<strong>环环相扣的荒诞小故事</strong>，前一样「碰上」后一样。适合记有顺序的短列表。是最容易上手的图像记忆技术。<span class="cite">→ <a href="/lessons/0001-story-method">第 1 课</a></span></p>
+    <p>把要记的一串东西，编成一个<strong>环环相扣的荒诞小故事</strong>，前一样「碰上」后一样。适合记有顺序的短列表。是最容易上手的图像记忆技术。<span class="cite">→ <a href={withBase('/lessons/0001-story-method')}>第 1 课</a></span></p>
 
     <h3 id="method-of-loci">记忆宫殿 / 位置法 <span class="cite">method of loci / memory palace</span></h3>
     <p>把要记的东西，<strong>安放在一条熟悉路线的固定地点上</strong>（家里的门口、沙发、冰箱…），回忆时沿路走一遍即可。记忆选手的核心武器，效果有 meta 分析支撑。<span class="cite">来源：Dresler et al. 2017；将在后续课程展开</span></p>
@@ -50,7 +51,7 @@ import Base from '../layouts/Base.astro';
     <p class="cite">卡壳的地方，几乎总是图像在这四点上偷了懒。</p>
 
     <nav class="lesson-nav">
-      <a href="/">← 返回路线</a> · <a href="/lessons/0001-story-method">第 1 课：故事联结法</a>
+      <a href={withBase('/')}>← 返回路线</a> · <a href={withBase('/lessons/0001-story-method')}>第 1 课：故事联结法</a>
       <br /><br />有不清楚的术语？直接问我——我是你的老师，随时可以展开讲。
     </nav>
   </article>

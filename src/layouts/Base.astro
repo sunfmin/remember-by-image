@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/fraunces';
 import '../styles/global.css';
+import { withBase } from '../scripts/url';
 
 interface Props {
   title: string;
@@ -15,7 +16,7 @@ const { title, active } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
     <title>{title}</title>
     <script is:inline>
       // 防闪烁：进页面立刻应用已保存的主题
@@ -28,7 +29,7 @@ const { title, active } = Astro.props;
   <body>
     <div class="shell">
       <header class="site-header">
-        <a class="wordmark" href="/">
+        <a class="wordmark" href={withBase('/')}>
           <span class="seal-mark">记</span>
           <span>
             <span class="name">图像记忆</span><br />
@@ -36,9 +37,9 @@ const { title, active } = Astro.props;
           </span>
         </a>
         <nav class="header-nav">
-          <a href="/" aria-current={active === 'home' ? 'page' : undefined}>路线</a>
-          <a href="/glossary" aria-current={active === 'glossary' ? 'page' : undefined}>术语表</a>
-          <a href="/resources" aria-current={active === 'resources' ? 'page' : undefined}>资源库</a>
+          <a href={withBase('/')} aria-current={active === 'home' ? 'page' : undefined}>路线</a>
+          <a href={withBase('/glossary')} aria-current={active === 'glossary' ? 'page' : undefined}>术语表</a>
+          <a href={withBase('/resources')} aria-current={active === 'resources' ? 'page' : undefined}>资源库</a>
           <button class="theme-toggle" type="button" aria-label="切换深浅色">◐</button>
         </nav>
       </header>
