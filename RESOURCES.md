@@ -45,6 +45,17 @@
   补救是重复提取 + 让画面「关系化」。另见 [Mempowered 的关键词法综述](https://www.mempowered.com/mnemonics/language/using-keyword-method-learn-vocabulary)：
   只对难词用、画面必须互动、不助反向回忆、抽象词较难。
   用于：诚实框定关键词法边界——爆破工具而非仓库，必须接续间隔复习（衔接第 4 课）。
+- [McWeeny et al. 1987 —「Baker/baker 悖论」实验（Wiley 摘要）](https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1111/j.2044-8295.1987.tb02235.x)
+  同一个词当职业（面包师）好记、当姓氏（贝克）难记——其他条件全部拉平仍然如此。
+  用于：解释人名为什么难记（任意音节标签，没有联想网），第 6 课开场。
+- [McCarty 1980 — 名脸联想法的拆解实验（PubMed）](https://pubmed.ncbi.nlm.nih.gov/7373246/)
+  三部件（脸部特征、名字图像化、两者互动画面）**缺一不可**；特征越独特越好用，
+  同一特征反复用会失灵。用于：名脸联结法四步的实证依据（第 6 课）。
+- [Morris et al. 2005 — 记人名策略对比（Wiley 摘要）](https://onlinelibrary.wiley.com/doi/abs/10.1002/acp.1115)
+  *Applied Cognitive Psychology* 19, 779–798。实验室 + 真实场景对比提取练习、语义联想与图像法：
+  真实场景里**扩展间隔的提取练习**收益最稳。Wiley 拦抓取，存在性经
+  [Lancaster EPrints](https://eprints.lancs.ac.uk/id/eprint/3609/) 交叉确认。
+  用于：第 6 课「画面负责挂上、提取负责钉牢」的实战侧依据。
 
 ## Knowledge — 书
 
