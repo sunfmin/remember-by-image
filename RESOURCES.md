@@ -31,6 +31,15 @@
   ERIC 拦自动抓取；全部数字已在同作者 1977 续篇原文核实（p.202，含西班牙语实验 keyword 88% vs 死记 28%）：
   [Raugh, Schupbach & Atkinson 1977 全文 PDF（eScholarship）](https://escholarship.org/uc/item/3bf6w6g4)——课堂规模的 675 词复制。
   用于：关键词法（第 3 课）的证据锚点。
+- [Murre & Dros 2015, *PLOS ONE* — 艾宾浩斯遗忘曲线的复制](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0120644)
+  按 1885 年原方法重做，曲线复制成功：不复习时先快后慢地掉，隔一天约六七成功课需重学。
+  用于：遗忘曲线（第 4 课）——「遗忘不是故障，是曲线」的证据锚点。
+- [Cepeda et al. 2006 — 分散练习 meta 分析（全文 PDF）](https://augmentingcognition.com/assets/Cepeda2006.pdf)
+  *Psychological Bulletin* 132(3)，317 个实验、839 组对比：同样的复习次数，隔开做全面胜过堆在一起做。
+  用于：间隔效应的量化证据（第 4 课）。
+- [Cepeda et al. 2008 — 最佳间隔的「山脊线」实验（eScholarship 全文）](https://escholarship.org/uc/item/0kp5q19x)
+  *Psychological Science* 19(11)，1350+ 人追踪至一年：最佳复习间隔随目标保持时长增长，
+  约为其 10–20%（记一周 → 隔一两天；记一年 → 以周月计）。用于：手动复习时间表的经验法则。
 - [Wang & Thomas 1995 — 关键词法的长期保持警告（解读页）](https://archive.memory-key.com/research/Wang95)
   不复习时，关键词法的即时优势几天内会消退甚至反转（*J. Educational Psychology* 87(3), 468–475）；
   补救是重复提取 + 让画面「关系化」。另见 [Mempowered 的关键词法综述](https://www.mempowered.com/mnemonics/language/using-keyword-method-learn-vocabulary)：
