@@ -1,0 +1,135 @@
+---
+order: 3
+title: 给记不住的单词，造一座谐音桥
+minutes: 25
+skill: 关键词法
+skillId: keyword-method
+emblem: 🗝️
+summary: 单词难在音和义之间没有桥——先找一个发音像它的中文词，再用画面把词义焊上去，两步跳过去。
+teaser:
+  title: 间隔复习
+  emblem: ⏳
+  note: 画面只负责「存进去」，不负责「一直在」——不复习，关键词的优势几天内就会消退。下一课把复习变成自动运转的系统。
+---
+
+import WordGrid from '../../components/WordGrid.astro';
+import Storyboard from '../../components/Storyboard.astro';
+import RecallTest from '../../components/RecallTest.astro';
+import Quiz from '../../components/Quiz.astro';
+import Box from '../../components/Box.astro';
+
+前两课解决的都是同一类问题：一串东西怎么挂——故事把它们<strong>串</strong>起来，宫殿把它们<strong>钉</strong>上去。但你最想记的外语单词，难点在别处。
+
+问题不是「挂在哪」，而是：pest 这串<strong>音</strong>，和「害虫」这个<strong>义</strong>之间，什么关系都没有。这是纯任意的配对，画面没地方下手——所以大多数人只剩一条路：硬灌几十遍。
+
+<a href="/glossary#keyword-method"><span class="term">关键词法</span></a>的解法是：既然音和义之间没有桥，就<strong>造一座</strong>。分两步：
+
+1. <strong>音桥</strong>（acoustic link）：找一个<strong>发音像原词</strong>的中文词，当「关键词」。像一部分就够，不用整个词都像。
+2. <strong>义桥</strong>（imagery link）：用一个画面，让关键词和<strong>词义</strong>撞在一起——还是那四要素：动态、夸张、荒诞、多感官。
+
+于是回忆时走的路是：听到 pest → 想起「拍死它」→ 看见画面 → 害虫。两步跳过一道本来无路可走的鸿沟。
+
+<Box title="证据：126 个词的对照实验">
+  这是图像记忆技术里被研究得最透的一个。斯坦福的经典实验让两组人各学 120 个俄语单词：关键词组在学完即测时答对 <strong>72%</strong>，对照组只有 <strong>46%</strong>；六周后回来再测，仍是 <strong>43% 对 28%</strong>。<a href="https://eric.ed.gov/?id=EJ113586" class="cite">(Atkinson & Raugh 1975)</a> 同系列的西班牙语实验差距更夸张：关键词组 <strong>88%</strong>，死记硬背组 <strong>28%</strong>。<a href="https://escholarship.org/uc/item/3bf6w6g4" class="cite">(Raugh, Schupbach & Atkinson 1977)</a>
+
+  注意六周后的另一面：两组<strong>都在掉</strong>。桥能帮你存进去，但存进去不等于一直在——这个坑我们课末再谈。
+</Box>
+
+## 先看 8 座造好的桥
+
+下面 8 个词，跟我一个一个走。每个词都停一下：先<strong>念出声</strong>，听它像哪个中文词，再把画面看清楚。
+
+<WordGrid
+  items={[
+    { word: 'pest', pic: '🪳' },
+    { word: 'ambulance', pic: '🚑' },
+    { word: 'agony', pic: '😖' },
+    { word: 'ambition', pic: '🔥' },
+    { word: 'morbid', pic: '⚰️' },
+    { word: 'shun', pic: '🙅' },
+    { word: 'tomb', pic: '🪦' },
+    { word: 'flee', pic: '🏃' },
+  ]}
+/>
+
+<Storyboard>
+  1. **pest**（害虫）——音桥「拍死它」。一只巨蟑螂大摇大摆横穿餐桌，全家人抄起拖鞋齐声怒吼：「拍死它！」
+  2. **ambulance**（救护车）——音桥「俺不能死」。担架上的人死死抓住车门，仰天大喊「俺不能死——」，救护车鸣笛狂奔。
+  3. **agony**（剧痛）——音桥「爱过你」。有人捂着心口跪倒在雨里，嘶吼一句「爱过你」，胸口像被撕开一样痛。
+  4. **ambition**（雄心）——音桥「俺必胜」。拳击台上的挑战者捶着胸口吼「俺必胜！」，眼睛里烧着火。
+  5. **morbid**（病态的）——音桥「毛病的」。一个人深更半夜蹲在墓地里，兴致勃勃地数墓碑，路人直摇头：这人是有毛病的。
+  6. **shun**（躲开）——音桥「闪」。他一出现，整条走廊的人「唰」地向两边闪开，留出一条空荡荡的路。
+  7. **tomb**（坟墓）——音桥「土墓」。一座完全用黄土堆成的墓，风一吹土哗哗往下掉，守墓人不停往上培土。
+  8. **flee**（逃跑）——音桥「飞离」。警报一响，人群像背后长了翅膀，双脚离地「飞离」现场。
+</Storyboard>
+
+三条造桥的手艺，来自最初那批实验者的选词标准<a href="https://escholarship.org/uc/item/3bf6w6g4" class="cite">(Raugh, Schupbach & Atkinson 1977)</a>：
+
+- <strong>音要够像。</strong>像原词的一部分就行——「拍死它」对上的是 pest 整个音，「闪」只对上 shun 的核心音节，都够用。
+- <strong>画面里两者必须互动。</strong>「关键词」和「词义」并排摆着没用，要撞在一起：喊着「拍死它」去拍的正是那只害虫。
+- <strong>一词一桥，不重复用。</strong>两个词共用一个关键词，回忆时会串线。
+
+## 证据时间：走一遍这 8 座桥
+
+顺序是：<strong>1 pest · 2 ambulance · 3 agony · 4 ambition · 5 morbid · 6 shun · 7 tomb · 8 flee</strong>。凭记忆写出每个词的中文义（用课上的那个词，比如「害虫」）。卡住时先<strong>念出这个英文词</strong>——音桥会把画面带出来。
+
+<Box title="✎ 回忆默写（先念出声，再走桥）" variant="win">
+  <RecallTest
+    items={['害虫', '救护车', '剧痛', '雄心', '病态的', '躲开', '坟墓', '逃跑']}
+    ordered={true}
+    placeholder="第 {n} 个的意思"
+  />
+</Box>
+
+<p class="cite">照例是<a href="/glossary#retrieval">提取练习</a>。全对不稀奇——这批桥是我造好给你的，真正的功夫在课末你自己造。</p>
+
+<Box title="诚实边界：桥是脚手架，不是仓库">
+  按本课程的规矩，把丑话说在前面：
+
+  - <strong>不复习，优势会消退。</strong>后续研究发现：只学一遍、不做任何复习，关键词法的即时优势几天内就会缩小甚至反转；但配合<strong>重复提取</strong>，它的效果又稳稳回来。<a href="https://archive.memory-key.com/research/Wang95" class="cite">(Wang & Thomas 1995)</a> 所以这一课必须接下一课的间隔复习，它不是独立成立的。
+  - <strong>只给「老大难」用。</strong>高频词见多了自然会，给每个词都造桥是浪费。桥是给那批怎么都记不住的词准备的爆破工具。
+  - <strong>桥主要通「看词想义」这个方向。</strong>反过来「想义拼词」（拼写、主动说出来）要另外练。
+  - <strong>桥用完会自己退场。</strong>词一旦熟了，你会直接从 pest 跳到「害虫」，不再经过「拍死它」——脚手架拆掉，楼还在。这是正常现象，不是遗忘。
+</Box>
+
+## 检查你有没有听懂
+
+<Quiz
+  questions={[
+    {
+      q: '关键词法的两座桥，正确的说法是哪一个？',
+      options: ['音桥找谐音，义桥靠画面', '音桥靠画面，义桥找谐音', '两座桥都要靠谐音来完成', '两座桥都要靠画面来完成'],
+      answer: 0,
+      explain: '先用发音相近的中文词搭音桥，再用画面把关键词和词义焊在一起搭义桥。顺序和分工不能乱。',
+    },
+    {
+      q: '关于关键词法的适用边界，哪个说法是对的？',
+      options: ['只给怎么都记不住的词用', '每个新单词都必须先造桥', '桥造好了就再也不用复习', '老手用它比新手效果更好'],
+      answer: 0,
+      explain: '高频词见多了自然会，全都造桥是浪费。不复习优势几天内会消退（Wang & Thomas 1995），而且经验丰富的学习者受益反而更小。',
+    },
+    {
+      q: '画面那一步（义桥），最容易失败的原因是什么？',
+      options: ['关键词和词义没有互动起来', '画面编得太夸张太荒诞了些', '谐音找得太像原来的发音了', '用了中文而不是英文关键词'],
+      answer: 0,
+      explain: '两样东西并排摆着记不住，必须撞在一起——喊着「拍死它」去拍的就是那只害虫。夸张荒诞是加分项，谐音越像越好，母语关键词正是该用的。',
+    },
+  ]}
+/>
+
+## 今天的练习：造你自己的 5 座桥
+
+样板桥是我的，<strong>你的生词得你自己造</strong>——今天剩下的时间（约 15 分钟）：
+
+1. 从你正在学的、或一直记不住的单词里挑 <strong>5 个「老大难」</strong>。没有现成词单，就从最近查过又忘了的词里翻。
+2. 每个词：念出声 → 找音桥（像一部分就行）→ 造画面（让关键词和词义打起来）→ <strong>合上词单立刻默测</strong>。
+3. <strong>明天早饭前再默测一遍</strong>——和你的宫殿隔夜默走放在一起做，两分钟的事。
+4. 有词死活找不到音桥？<strong>直接把词丢给我。</strong>实验里的关键词本来就是研究者提供的，效果一点不打折——造桥这活可以外包给老师，走桥必须你自己走。
+
+<Box title="今日一读（可选）">
+  [Mempowered 的关键词法综述](https://www.mempowered.com/mnemonics/language/using-keyword-method-learn-vocabulary)——把几十年研究浓缩成一页：什么时候好用、什么时候别用、画面怎么搭才牢。英文页面，读不动就跳过。
+</Box>
+
+<strong>下一课预告：</strong>三课下来你手里有三样工具了，但它们都只管「存进去」。存进去的东西不复习会漏——什么时候复习、隔多久、怎么让这事自动发生？下一课讲<a href="/glossary#spacing"><span class="term">间隔</span></a>复习，并给你的单词配一个会自己提醒你的系统。
+
+<strong>词单在手边吗？现在就发给我。</strong>把你最近记不住的 5 个词贴过来，我们当场一起造桥——这比看任何样板都练手艺。
