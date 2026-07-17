@@ -19,6 +19,12 @@
 - [Roediger & Karpicke 2006,《Test-Enhanced Learning》(PubMed)](https://pubmed.ncbi.nlm.nih.gov/16507066/)
   里程碑实验：反复**测试**比反复**重读**更能长期记住（testing effect / 提取练习）。
   用于：解释为什么本课程每课都要你「回忆默写」而不是「再看一遍」。
+  文中回顾的 Gates 1917（背诵：把大头时间花在「试背」上远胜反复朗读）是第 9 课「出声提取」的出处。
+- [Noice & Noice 2006 — 演员怎么记住整本台词（Sage 摘要）](https://journals.sagepub.com/doi/10.1111/j.0963-7214.2006.00398.x)
+  *Current Directions in Psychological Science*。演员靠的不是死背，而是「active experiencing」：
+  把剧本拆成一个个意图（beat），全身心经历角色——台词是副产品。
+  通俗版见 [ScienceDaily 报道](https://www.sciencedaily.com/releases/2006/01/060126194917.htm)。
+  用于：第 9 课逐字背诵「意思层优先」的证据。
 - [Dresler et al. 2017, *Neuron* —《记忆训练重塑大脑网络》(PMC 全文)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5439266/)
   23 位世界级记忆选手 + 6 周记忆宫殿训练新手的 fMRI 研究：技术会重组大脑网络，效果维持 4 个月。
   用于:「这是真神经科学,不是把戏」的最强锚点。图像记忆激活的是**空间记忆网络**(海马/海马旁/压后皮层),不是什么「未开发的右脑」。
