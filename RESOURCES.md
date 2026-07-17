@@ -56,6 +56,11 @@
   真实场景里**扩展间隔的提取练习**收益最稳。Wiley 拦抓取，存在性经
   [Lancaster EPrints](https://eprints.lancs.ac.uk/id/eprint/3609/) 交叉确认。
   用于：第 6 课「画面负责挂上、提取负责钉牢」的实战侧依据。
+- [Ericsson, Chase & Faloon 1980, *Science* — 数字广度 7→79 的经典个案（DTIC 报告版 PDF）](https://apps.dtic.mil/sti/tr/pdf/ADA084754.pdf)
+  230+ 小时练习把一个普通大学生的数字广度从 7 位练到 79 位；机制是把数字组块成有意义单位
+  （他是长跑迷，把数字听成比赛用时）。字母广度仍是六个左右——**容量没变，编码变了**。
+  正式版见 [Science 页面](https://www.science.org/doi/10.1126/science.7375930)（拦抓取）。
+  用于：第 7 课「数字可记性来自编码而非天赋」的证据锚点。
 
 ## Knowledge — 书
 
@@ -75,6 +80,9 @@
 - [Anki 官方手册](https://docs.ankiweb.net/)
   间隔重复 + 提取练习的工具，支持图片卡（正合双编码）。用于：把单词记忆场景变成可持续的日常系统。
   ⚠️ `ankichina.net`/`ankichinas.cn` 是无关的商业山寨，别用。
+- [Art of Memory：数字形状法教程](https://artofmemory.com/blog/number-shape-system/)（[数字韵脚法](https://artofmemory.com/blog/number-rhyme-system/) · [Major 系统](https://artofmemory.com/blog/major-system/)）
+  数字→图像各流派的权威技术页。站点拦自动抓取，已经搜索索引交叉确认存在。
+  用于：第 7 课数字身份证的技术出处与进阶阅读（Major/PAO 属竞技级，MISSION 范围外）。
 - [Learning Scientists — 免费下载材料](https://www.learningscientists.org/downloadable-materials)
   六大策略的 CC 授权海报/幻灯（含提取练习、间隔、双编码）。注：暂无中文翻译。
 
