@@ -26,6 +26,16 @@
   13 项 RCT，中等偏上效应 g=0.65。用于：记忆宫殿「到底有没有用」的量化证据。
 - [Ondřej 2025, *British Journal of Psychology* — 更大规模的 meta 分析 (PMC)](https://pmc.ncbi.nlm.nih.gov/articles/PMC12514325/)
   83 项研究，即时序列回忆的大效应 d=0.88；也诚实指出整体证据质量「低到很低」。用于：平衡、不吹过头的现状认知。
+- [Atkinson & Raugh 1975 — 关键词法教俄语单词（ERIC 索引）](https://eric.ed.gov/?id=EJ113586)
+  120 个俄语词对照实验：学完即测 keyword 组 72% vs 对照组 46%；六周后 43% vs 28%。
+  ERIC 拦自动抓取；全部数字已在同作者 1977 续篇原文核实（p.202，含西班牙语实验 keyword 88% vs 死记 28%）：
+  [Raugh, Schupbach & Atkinson 1977 全文 PDF（eScholarship）](https://escholarship.org/uc/item/3bf6w6g4)——课堂规模的 675 词复制。
+  用于：关键词法（第 3 课）的证据锚点。
+- [Wang & Thomas 1995 — 关键词法的长期保持警告（解读页）](https://archive.memory-key.com/research/Wang95)
+  不复习时，关键词法的即时优势几天内会消退甚至反转（*J. Educational Psychology* 87(3), 468–475）；
+  补救是重复提取 + 让画面「关系化」。另见 [Mempowered 的关键词法综述](https://www.mempowered.com/mnemonics/language/using-keyword-method-learn-vocabulary)：
+  只对难词用、画面必须互动、不助反向回忆、抽象词较难。
+  用于：诚实框定关键词法边界——爆破工具而非仓库，必须接续间隔复习（衔接第 4 课）。
 
 ## Knowledge — 书
 
