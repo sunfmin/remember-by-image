@@ -1,7 +1,9 @@
 # 图像记忆 · 私人课程站
 
-这是 Felix 的私人学习项目：AI 家教在辅导 session 里授课，课程沉淀为一个本地 Astro 网站。
-不部署、不公开，`npm run dev` 后在本机浏览器学习。
+这是 Felix 的私人学习项目：AI 家教在辅导 session 里授课，课程沉淀为一个 Astro 网站。
+本地 `npm run dev` 学习（注意 base 路径：http://localhost:4321/remember-by-image/），
+push main 后 GitHub Actions 自动部署到 GitHub Pages（http://sunfmin.com/remember-by-image/）。
+站内链接一律用根相对路径写（`/glossary#...`），base 前缀由 withBase() 和 rehype 插件统一处理。
 
 ## 角色分工（两类文件，别混）
 

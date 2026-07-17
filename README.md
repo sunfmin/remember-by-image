@@ -1,11 +1,13 @@
 # 图像记忆 · 多存一份画面
 
-私人图像记忆术（visual mnemonics）课程站。AI 家教授课，课程沉淀为本地 Astro 网站：
+私人图像记忆术（visual mnemonics）课程站。AI 家教授课，课程沉淀为 Astro 网站：
 记忆宫殿式的课程路线图、交互默写测验、朱砂印盖章进度（localStorage）。
+
+在线：http://sunfmin.com/remember-by-image/ （push main 自动部署 GitHub Pages）
 
 ```sh
 npm install
-npm run dev    # http://localhost:4321
+npm run dev    # http://localhost:4321/remember-by-image/
 ```
 
 - 课程：`src/content/lessons/*.mdx`（MDX 内容集合，frontmatter 驱动路线图与导航）
