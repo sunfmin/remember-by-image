@@ -5,7 +5,7 @@ import { withBase } from '../scripts/url';
 
 interface Props {
   title: string;
-  active?: 'home' | 'glossary' | 'resources';
+  active?: 'home' | 'glossary' | 'resources' | 'recite';
 }
 
 const { title, active } = Astro.props;
@@ -40,6 +40,7 @@ const { title, active } = Astro.props;
           <a href={withBase('/')} aria-current={active === 'home' ? 'page' : undefined}>路线</a>
           <a href={withBase('/glossary')} aria-current={active === 'glossary' ? 'page' : undefined}>术语表</a>
           <a href={withBase('/resources')} aria-current={active === 'resources' ? 'page' : undefined}>资源库</a>
+          <a href={withBase('/recite/pipa-xing')} aria-current={active === 'recite' ? 'page' : undefined}>背诵</a>
           <button class="theme-toggle" type="button" aria-label="切换深浅色">◐</button>
         </nav>
       </header>
